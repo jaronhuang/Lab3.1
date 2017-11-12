@@ -3,65 +3,33 @@ public class ArrayMethods
 {
 	public static void main(String[] args)
 	{
-		int[] numList = {1, 3, 5, 6, 1};
-		System.out.println(removeDuplicates(numList));
+		int[] numList = new int[]{1, 3, 5, 6, 1};
+		
+		int[] num1 = new int[] {1, 7, 9, 11};
+		int[] num2 = new int[] {2, 6, 8, 10};
+		
+		printArray(productArray(num1,num2));
 	}
 	
-	public static int removeDuplicates(int[] list)
+	public static int[] removeDuplicates(int[] list)
 	{
-		int[] cList;
-		int c = 0;
-		int count = 0;
 		
-		for (int i = 0; i < list.length - 1; i++)
+	}
+	
+	public static int[][] productArray(int[] arr1, int[] arr2)
+	{
+		int[][] product = new int[arr1.length][arr2.length];
+		for (int i = 0; i < arr1.length; i++)
 		{
-			for (int j = 1; j < list.length; j++)
+			for(int j = 0; j < arr2.length;j++)
 			{
-				if (list[i] != list[j])
-				{
-					c++;
-				}
-				
-				if (c == (list.length - j))
-				{
-					count++;
-					c = 0;
-				}
+				product[i][j] = arr1[i]*arr2[j];
 			}
 		}
-		
-		return count;
-		
-		/*cList = new int[count];
-		int h = 0;
-		int hold = 0;
-		for(int i = 0; i < list.length - 1; i++)
-		{
-			for(int j = 1; j < list.length; j++)
-			{
-				if (list[i] != list[j])
-				{
-					h++;
-				}
-				
-				if (h == (list.length - j))
-				{
-					cList[hold] = list[i];
-					hold++;
-					h = 0;
-				}
-			}
-		}
-		
-		return cList;*/
+		return product; 
 	}
 	
-	//public static int[][] productArray(int[] arr1, int[] arr2)
-	{
-	
-	}
-	
-	//public static int[ ][ ] pascalTriangle(int n)
+	public static int[ ][ ] pascalTriangle(int n)
 	{
 		
 	}
@@ -78,5 +46,17 @@ public class ArrayMethods
 			System.out.print("[" + arr[i] + "] ");
 		}
 		System.out.println();
+	}
+	
+	public static void printArray(int[][] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			for (int j = 0; j < arr[i].length; j++)
+			{
+				System.out.print("[" + arr[i][j] + "]");
+			}
+			System.out.println();
+		}
 	}
 }
