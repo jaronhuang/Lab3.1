@@ -8,7 +8,7 @@ public class ArrayMethods
 		int[] num1 = new int[] {1, 7, 9, 11};
 		int[] num2 = new int[] {2, 6, 8, 10};
 		
-		printArray(productArray(num1,num2));
+		printArray(pascalTriangle(5));
 	}
 	
 	public static int[] removeDuplicates(int[] list)
@@ -18,20 +18,38 @@ public class ArrayMethods
 	
 	public static int[][] productArray(int[] arr1, int[] arr2)
 	{
-		int[][] product = new int[arr1.length][arr2.length];
+		int[][] result = new int[arr1.length][arr2.length];
+		
 		for (int i = 0; i < arr1.length; i++)
 		{
-			for(int j = 0; j < arr2.length;j++)
+			for(int j = 0; j < arr2.length; j++)
 			{
-				product[i][j] = arr1[i]*arr2[j];
+				result[i][j] = arr1[i]*arr2[j];
 			}
 		}
-		return product; 
+		return result; 
 	}
 	
 	public static int[ ][ ] pascalTriangle(int n)
 	{
+		int[][] result = new int[n][];
 		
+		for (int i = 0; i < n; i++)
+		{
+			result[i] = new int[i+1];
+			for (int j = 0; j < i + 1; j++)
+			{
+				if (j == 0 || j == i)
+				{
+					result[i][j] = 1;
+				}
+				else
+				{
+					result[i][j] = result[i-1][j-1] + result[i-1][j];
+				}
+			}
+		}
+		return result;
 	}
 	
 	public static void printPascalTriangle(int[ ] [ ] triangle)
