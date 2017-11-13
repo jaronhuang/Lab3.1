@@ -3,17 +3,40 @@ public class ArrayMethods
 {
 	public static void main(String[] args)
 	{
-		int[] numList = new int[]{1, 3, 5, 6, 1};
+		int[] numList = new int[]{1, 2, 3, 4, 5, 6, 6, 5, 4, 5, 2, 3, 5, 1, 2, 5, 3, 6, 2, 1, 6, 1, 6};
 		
 		int[] num1 = new int[] {1, 7, 9, 11};
 		int[] num2 = new int[] {2, 6, 8, 10};
 		
-		printArray(pascalTriangle(5));
+		printArray(pascalTriangle(8));
+		//printArray(productArray(num1, num2));
+		//printArray(removeDuplicates(numList));
 	}
 	
 	public static int[] removeDuplicates(int[] list)
 	{
+		int[] result;
+		result = new int[countUnique(list)];
 		
+		int count = 0;
+		for (int i = 0; i < list.length; i++)
+		{
+			boolean isDup = false;
+			for (int j = i + 1; j < list.length; j++)
+			{
+				if (list[i] == list[j])
+				{
+					isDup = true;
+				}
+			}
+			if (!isDup)
+			{
+				result[count] = list[i];
+				count++;
+			}
+		}
+		
+		return result;
 	}
 	
 	public static int[][] productArray(int[] arr1, int[] arr2)
@@ -52,7 +75,7 @@ public class ArrayMethods
 		return result;
 	}
 	
-	public static void printPascalTriangle(int[ ] [ ] triangle)
+	public static void printPascalTriangle(int[ ][ ] triangle)
 	{
 		
 	}
@@ -76,5 +99,30 @@ public class ArrayMethods
 			}
 			System.out.println();
 		}
+	}
+	
+	public static int countUnique(int[] numbers)
+	{
+		int count = 0;
+		
+		for(int i = 0; i < numbers.length; i++)
+		{
+			boolean unique = true;
+			
+			for (int j = i + 1; j < numbers.length; j++)
+			{
+				if (numbers[i] == numbers[j])
+				{
+					unique = false; 
+					break; 
+				}
+			}
+			
+			if(unique)
+			{
+				count++;
+			}
+		}
+		return count;
 	}
 }
