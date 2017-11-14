@@ -1,4 +1,9 @@
-
+/**
+ * ArrayMethods Lab 3.1
+ * @author Jaron Huang
+ * Period 6 - 7
+ * Created on: 11/14/17
+ */
 public class ArrayMethods 
 {
 	public static void main(String[] args)
@@ -16,6 +21,11 @@ public class ArrayMethods
 		printArray(removeDuplicates(numList));
 	}
 	
+	/**
+	 * Removes duplicates from a given array
+	 * @param list An array of numbers
+	 * @return A new list with the unique numbers of the original array
+	 */
 	public static int[] removeDuplicates(int[] list)
 	{
 		int[] result;
@@ -42,6 +52,12 @@ public class ArrayMethods
 		return result;
 	}
 	
+	/**
+	 * Multiplies each element in the first array with each element in the second array
+	 * @param arr1 An array of numbers
+	 * @param arr2 An array of numbers
+	 * @return returns a multidimensional array containing the product of each combination of elements.
+	 */
 	public static int[][] productArray(int[] arr1, int[] arr2)
 	{
 		int[][] result = new int[arr1.length][arr2.length];
@@ -56,6 +72,11 @@ public class ArrayMethods
 		return result; 
 	}
 	
+	/**
+	 * Prints out a pascal triangle with any number of rows
+	 * @param n Amount of rows the pascal triangle contains
+	 * @return Returns a two-dimensional “jagged” array holding n-rows of Pascal’s triangle.
+	 */
 	public static int[ ][ ] pascalTriangle(int n)
 	{
 		int[][] result = new int[n][];
@@ -78,6 +99,10 @@ public class ArrayMethods
 		return result;
 	}
 	
+	/**
+	 * Arranges the Pascal Triangle into a triangle
+	 * @param pTriangle Pascal Triangle Array
+	 */
 	public static void printPascalTriangle(int[ ][ ] pTriangle)
 	{
 		for (int i = 0; i < pTriangle.length; i++)
@@ -94,6 +119,10 @@ public class ArrayMethods
 		}
 	}
 	
+	/**
+	 * Prints out each element of the array
+	 * @param arr Array that is being printed out
+	 */
 	public static void printArray(int[] arr)
 	{
 		for(int i = 0; i < arr.length; i++)
@@ -103,6 +132,10 @@ public class ArrayMethods
 		System.out.println();
 	}
 	
+	/**
+	 * Prints out each element a multidimensional array
+	 * @param arr Array that is being printed out
+	 */
 	public static void printArray(int[][] arr)
 	{
 		for(int i = 0; i < arr.length; i++)
@@ -115,6 +148,11 @@ public class ArrayMethods
 		}
 	}
 	
+	/**
+	 * Finds how many unique elements are in a given array
+	 * @param numbers Array of numbers
+	 * @return Returns the number of unique elements
+	 */
 	public static int countUnique(int[] numbers)
 	{
 		int count = 0;
