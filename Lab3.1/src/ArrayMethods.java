@@ -3,14 +3,17 @@ public class ArrayMethods
 {
 	public static void main(String[] args)
 	{
-		int[] numList = new int[]{1, 2, 3, 4, 5, 6, 6, 5, 4, 5, 2, 3, 5, 1, 2, 5, 3, 6, 2, 1, 6, 1, 6};
+		int[] numList = new int[]{0, 1, 2, 3, 4, 5, 6, 11, 13, 13, 11, 13, 3, 2, 1, 0, 4, 3, 2, 11, 13, 0, 2, 4, 1, 5, 6};
 		
 		int[] num1 = new int[] {1, 7, 9, 11};
 		int[] num2 = new int[] {2, 6, 8, 10};
 		
-		printArray(pascalTriangle(8));
-		//printArray(productArray(num1, num2));
-		//printArray(removeDuplicates(numList));
+		System.out.println("Pascal Triangle:");
+		printPascalTriangle(pascalTriangle(4));
+		System.out.println("Product Array:");
+		printArray(productArray(num1, num2));
+		System.out.println("Remove Duplicates:");
+		printArray(removeDuplicates(numList));
 	}
 	
 	public static int[] removeDuplicates(int[] list)
@@ -59,7 +62,7 @@ public class ArrayMethods
 		
 		for (int i = 0; i < n; i++)
 		{
-			result[i] = new int[i+1];
+			result[i] = new int[i + 1];
 			for (int j = 0; j < i + 1; j++)
 			{
 				if (j == 0 || j == i)
@@ -75,9 +78,20 @@ public class ArrayMethods
 		return result;
 	}
 	
-	public static void printPascalTriangle(int[ ][ ] triangle)
+	public static void printPascalTriangle(int[ ][ ] pTriangle)
 	{
-		
+		for (int i = 0; i < pTriangle.length; i++)
+		{
+			for (int j = 0; j < pTriangle.length - i; j++)
+			{
+				System.out.print("  ");
+			}
+			for (int k = 0; k < pTriangle[i].length; k++)
+			{
+				System.out.print("[" + pTriangle[i][k] + "] ");
+			}
+			System.out.println();
+		}
 	}
 	
 	public static void printArray(int[] arr)
